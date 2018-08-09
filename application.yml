@@ -2,9 +2,6 @@ services:
   todo-service:
     host: todo-service
     port: 8082
-  user-service:
-      host: user-service
-      port: 8081
 
 db:
   host: mysql
@@ -16,10 +13,6 @@ db:
 todo-service:
   ribbon:
     listOfServers: ${services.todo-service.host}:${services.todo-service.port}
-
-user-service:
-  ribbon:
-    listOfServers: ${services.user-service.host}:${services.user-service.port}
 
 
 spring:
