@@ -1,5 +1,3 @@
 services:
   todo-service:
     host: localhost
-  user-service:
-    host: 8001
