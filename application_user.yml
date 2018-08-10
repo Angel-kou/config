@@ -1,7 +1,7 @@
 services:
-  todo-service:
-    host: todo-service
-    port: 8082
+  user-service:
+    host: user-service
+    port: 8081
 
 db:
   host: localhost
@@ -10,9 +10,9 @@ db:
   password: password
   schema: ${todo-service.db.name},${user-service.db.name}
 
-todo-service:
+user-service:
   ribbon:
-    listOfServers: ${services.todo-service.host}:${services.todo-service.port}
+    listOfServers: ${services.user-service.host}:${services.user-service.port}
 
 
 spring:
