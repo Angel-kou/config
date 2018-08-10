@@ -11,11 +11,16 @@ db:
   port: 3306
   username: root
   password: password
-  schema: ${todo-service.db.name}
+  schema: ${todo-service.db.name},${user-service.db.name}
 
 todo-service:
   ribbon:
     listOfServers: ${services.todo-service.host}:${services.todo-service.port}
+
+user-service:
+  ribbon:
+    listOfServers: ${services.user-service.host}:${services.user-service.port}
+
 
 spring:
   jpa:
