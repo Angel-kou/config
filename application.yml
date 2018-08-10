@@ -3,8 +3,8 @@ services:
     host: todo-service
     port: 8082
   user-service:
-      host: user-service
-      port: 8081
+    host: user-service
+    port: 8081
 
 db:
   host: localhost
