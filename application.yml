@@ -11,7 +11,7 @@ db:
   port: 3306
   username: root
   password: password
-  schema: ${db.name}
+  schema: ${todo-service.db.name}
 
 todo-service:
   ribbon:
