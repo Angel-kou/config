@@ -19,7 +19,7 @@ spring:
     hibernate:
       ddl-auto: none
   datasource:
-    url: jdbc:mysql://${db.host}:${db.port}/todoList
+    url: jdbc:mysql://${db.host}:${db.port}/${db.name}
     username: ${db.username}
     password: ${db.password}
     driver-class-name: com.mysql.jdbc.Driver
