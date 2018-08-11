@@ -2,13 +2,16 @@ services:
   todo-service:
     host: todo-service
     port: 8082
+  user-service:
+    host: todo-service
+    port: 8081
 
 db:
   host: localhost
   port: 3306
   username: root
   password: password
-  schema: ${db.name}
+  schema: ${todo-service.db.name}
 
 todo-service:
   ribbon:
@@ -19,7 +22,7 @@ spring:
     hibernate:
       ddl-auto: none
   datasource:
-    url: jdbc:mysql://${db.host}:${db.port}/${db.name}
+    url: jdbc:mysql://${db.host}:${db.port}/${todo-service.db.name}
     username: ${db.username}
     password: ${db.password}
     driver-class-name: com.mysql.jdbc.Driver
