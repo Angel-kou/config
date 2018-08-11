@@ -1,3 +1,2 @@
-todo-service:
-  db:
-    name: todoList
+db:
+  name: todoList
