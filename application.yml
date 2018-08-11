@@ -1,8 +1,7 @@
 services:
-  todo-service:
+  user-service:
     host: user-service
     port: 8081
-
 
 db:
   host: localhost
@@ -11,7 +10,7 @@ db:
   password: password
   schema: ${user-service.db.name}
 
-todo-service:
+user-service:
   ribbon:
     listOfServers: ${services.user-service.host}:${services.user-service.port}
 
