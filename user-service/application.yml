@@ -1,6 +1,6 @@
 services:
   user-service:
-    host: todo-service
+    host: user-service
     port: 8081
 
 
