@@ -22,7 +22,7 @@ spring:
     hibernate:
       ddl-auto: none
   datasource:
-    url: jdbc:mysql://${db.host}:3306/${todo-service.db.name}
+    url: jdbc:mysql://localhost:3306/${todo-service.db.name}
     username: ${db.username}
     password: ${db.password}
     driver-class-name: com.mysql.jdbc.Driver
