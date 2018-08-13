@@ -1,3 +1,3 @@
 services:
   todo-service:
-    host: localhost
+    host: todo-service
