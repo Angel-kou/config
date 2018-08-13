@@ -1,51 +1,42 @@
-services:
-  zuul:
-    host: zuul
-    port: 8080
-
-  user-service:
-    ribbon:
-      listOfServers: user-service:8081
-
-  todo-service:
-    ribbon:
-      listOfServers: todo-service:8082
-
-  zuul:
-    debug:
-       request: true
-    sensitive-headers:
-    prefix: /api
-    routes:
-      user:
-        path: /users/**
-        serviceId: user-service
-        strip-prefix: false
-      verification:
-        path: /verification
-        serviceId: user-service
-        strip-prefix: false
-      login:
-        path: /login/**
-        serviceId: user-service
-        strip-prefix: false
-
-      todos:
-        path: /todos/**
-        serviceId: todo-service
-        strip-prefix: false
-
-      logging:
-         level:
-           org:
-             springframework:
-               cloud:
-                 netflix: INFO
-
-
-
-
-
 server:
-  port: ${services.${spring.application.name}.port}
+  port: 8080
 
+
+user-service:
+  ribbon:
+    listOfServers: user-service:8081
+
+todo-service:
+  ribbon:
+    listOfServers: todo-service:8082
+
+zuul:
+  debug:
+     request: true
+  sensitive-headers:
+  prefix: /api
+  routes:
+    user:
+      path: /users/**
+      serviceId: user-service
+      strip-prefix: false
+    verification:
+      path: /verification
+      serviceId: user-service
+      strip-prefix: false
+    login:
+      path: /login/**
+      serviceId: user-service
+      strip-prefix: false
+
+    todos:
+      path: /todos/**
+      serviceId: todo-service
+      strip-prefix: false
+
+    logging:
+       level:
+         org:
+           springframework:
+             cloud:
+               netflix: INFO
