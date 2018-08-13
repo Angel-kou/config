@@ -1,5 +1,6 @@
 services:
   zuul:
+    host: zuul
     port: 8080
 
 user-service:
